@@ -1,10 +1,8 @@
 package com.bto.publisher;
 
+import com.bto.notification.Notification;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MessageController {
@@ -23,5 +21,14 @@ public class MessageController {
         return "wrzucono wiadomość na RabbitMq";
     }
 
-    //localhost:8080/message?message=kon
+    //localhost:8762/message?message=kon
+
+    //https://customer.cloudamqp.com/instance
+
+    @PostMapping("/notification")
+    public String sendNotification(@RequestBody Notification notification){
+        rabbitTemplate.convertAndSend("kurs", notification);
+        return "wrzucono notyfikacje  na RabbitMq";
+    }
+
 }
