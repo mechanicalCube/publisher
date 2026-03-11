@@ -1,6 +1,6 @@
-package com.bto.publisher;
+package com.bto.publisher.controller;
 
-import com.bto.notification.Notification;
+import com.bto.publisher.model.Notification;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.*;
 
