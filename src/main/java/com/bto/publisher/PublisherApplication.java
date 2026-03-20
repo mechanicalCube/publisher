@@ -4,6 +4,7 @@ import org.springframework.amqp.support.converter.JacksonJsonMessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class PublisherApplication {
@@ -15,6 +16,11 @@ public class PublisherApplication {
 	@Bean
 	public JacksonJsonMessageConverter jsonMessageConverter() {
 		return new JacksonJsonMessageConverter();
+	}
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 
 }
