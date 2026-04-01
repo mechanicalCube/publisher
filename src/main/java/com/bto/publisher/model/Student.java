@@ -1,7 +1,5 @@
 package com.bto.publisher.model;
 
-import tools.jackson.databind.node.StringNode;
-
 public class Student {
 
     private String firstName;
