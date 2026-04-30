@@ -9,18 +9,18 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class PublisherApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PublisherApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PublisherApplication.class, args);
+    }
 
-	@Bean
-	public JacksonJsonMessageConverter jsonMessageConverter() {
-		return new JacksonJsonMessageConverter();
-	}
+    @Bean
+    public JacksonJsonMessageConverter jsonMessageConverter() {
+        return new JacksonJsonMessageConverter();
+    }
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 
 }
